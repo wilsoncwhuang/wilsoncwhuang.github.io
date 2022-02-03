@@ -46,7 +46,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   Welcome to my website! I am Wilson Huang. I currently study Industrial & Information Management with a Computer Science minor at National Cheng Kung University 
   and work at Lumentum as a data automation intern. I share my programming work (mostly related to data science) and some fields I am interested in here!
 
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/blog" # the subpath of your site, e.g. /blog
 url: "https://wilsoncwhuang.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 favicon: "assets/images/favicons/meteor.png" # the favicon for your site
 
