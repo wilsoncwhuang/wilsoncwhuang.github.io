@@ -42,7 +42,8 @@ author: Wilson C.W. Huang
 #
 copyright: "Some Rights Reserved (cleft) {currentYear} {author}"
 
-description: "Write"
+description: >- # this means to ignore newlines until "baseurl:"
+  Hello
 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://wilsoncwhuang.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
