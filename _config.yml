@@ -44,7 +44,7 @@ copyright: "Some Rights Reserved (cleft) {currentYear} {author}"
 
 description: "Write"
 
-baseurl: "/blog" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://wilsoncwhuang.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 favicon: "assets/images/favicons/meteor.png" # the favicon for your site
 
