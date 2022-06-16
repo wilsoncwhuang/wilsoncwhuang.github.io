@@ -24,7 +24,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Wilson C.W. Huang
+title: Wilson
 email: wilson10400235@gmail.com
 author: Wilson C.W. Huang
 
@@ -43,7 +43,7 @@ author: Wilson C.W. Huang
 copyright: "Some Rights Reserved (cleft) {currentYear} {author}"
 
 description: >- # this means to ignore newlines until "baseurl:"
-   I am Wilson Huang. I currently study Industrial & Information Management 
+  I am Wilson Huang. I currently study Industrial & Information Management 
   with a Computer Science minor at National Cheng Kung University and work at Lumentum as a data automation intern. 
   I share my programming works (mostly related to data science and operation researchs) and some fields I am interested in here!
 
@@ -118,7 +118,7 @@ yat:
 # greatgold: #f2cb05
 # greenblue: #389092
 #
-brand_color: greenblue
+brand_color: greatgold
 #
 # Custom color as below:
 # brand_color: "#1a8e42"
