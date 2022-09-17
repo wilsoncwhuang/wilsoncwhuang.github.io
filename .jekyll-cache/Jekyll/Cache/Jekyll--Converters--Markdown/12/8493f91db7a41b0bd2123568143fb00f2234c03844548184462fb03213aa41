@@ -1,0 +1,102 @@
+I"{<h2 id="h2">Abstract</h2>
+<p>In our capstone project, we took Southeast Machinery Company as an example to discuss the optimization and control of make-to-order production process. In order to improve the manufacturing process of their plastic extruders, our team introduced Microsoft Project to their company and developed an internal project management system
+by Project VBA. Eventually, we conducted a survey which based on SUS (system usability scale) for understanding user experience and therefore modification.</p>
+
+<h2 id="h2">Introduction</h2>
+
+<h3 id="h4">About Southern Machinery</h3>
+<p>SOUTHEAST MACHINERY are fully capable of supplying a range of plastic extrusion machinery, would like blown film machine, waste recycling making machine and drinking straw making machine</p>
+
+<h3 id="h4">Problem Description</h3>
+
+<table>
+  <tbody>
+    <tr>
+      <td>:Time       :</td>
+      <td>Did not define standard manufacturing process</td>
+    </tr>
+    <tr>
+      <td>^^</td>
+      <td>Did not track suppliers’ delivery process</td>
+    </tr>
+    <tr>
+      <td>:Cost       :</td>
+      <td>Lack of bill of material to calculate cost</td>
+    </tr>
+    <tr>
+      <td>^^</td>
+      <td>Quotation often based on past saling experience</td>
+    </tr>
+    <tr>
+      <td>:Performance:</td>
+      <td>Poor information flow within the company</td>
+    </tr>
+    <tr>
+      <td>^^</td>
+      <td>Quotation often based on past saling experience</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="h4">Procedure</h3>
+<ol>
+  <li>Interviewed managers to find process defections</li>
+  <li>Defined problems as reducing manufacturing time</li>
+  <li>Created bill of materials, decomposed manufacturing process, and defined cost</li>
+  <li>Utilized Microsoft Project for basic project management functions</li>
+  <li>Constructed an internal system for extended and customized project management functions</li>
+  <li>Tested the system and taught company’s faculty how to operate</li>
+  <li>Conducted survey for user experience and made improvement</li>
+</ol>
+
+<h2 id="h2">Method</h2>
+<ul>
+  <li><strong>Workflow Improvement</strong>
+    <ul>
+      <li>Task process tracking</li>
+      <li>Data and reports aggregation</li>
+      <li>Abnormal work reports</li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li><strong>Project Management</strong></li>
+</ul>
+<table>
+ <tr>
+  <th>Time Management</th>
+  <th>Cost Management</th>
+  <th>Performance Management</th>	 	
+ </tr>
+ <tr>
+  <td>Task Duration<br />Activity-on-Node<br />Network Diagram<br />Gantt Chart</td>
+  <td>Estimated Cost<br />Actual Cost<br />Wage</td>
+  <td>Planning versus Execution<br />Performance Measurement Reports</td>
+ </tr>
+ <tr>
+  <td colspan="3">Utilized schedule index: ACWP, BCWP, BCWS, CV</td>
+ </tr>
+</table>
+
+<ul>
+  <li><strong>Project Management</strong></li>
+</ul>
+
+<style>
+#h2{
+	font-weight:bold;
+}
+
+#h4{
+	margin: 25px 0px 5px;	
+}
+
+p{
+	text-align: justify;
+}
+</style>
+
+:ET
