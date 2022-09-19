@@ -18,12 +18,20 @@ SOUTHEAST MACHINERY are fully capable of supplying a range of plastic extrusion 
 
 ### Problem Description 
 
-|:Time       :| Did not define standard manufacturing process     |
-|^^           | Did not track suppliers' delivery process         |
-|:Cost       :| Lack of bill of material to calculate cost        |
-|^^           | Quotation often based on past saling experience   |
-|:Performance:| Poor information flow within the company          |
-|^^           | Quotation often based on past saling experience   |
+<table>
+ <tr>
+	<td>Time</td>
+	<td>Did not define standard manufacturing process<br>Did not track suppliers’ delivery process</td>
+ </tr>
+ <tr>
+	<td>Cost</td>
+	<td>Lack of bill of material to calculate cost<br>Quotation often based on past saling experience</td>
+ </tr>
+ <tr>
+	<td>Performance</td>
+	<td>Poor information flow within the company<br>Quotation often based on past saling experience</td>
+ </tr>
+</table>
 
 ### Procedure
 1. Interviewed managers to find process defections
