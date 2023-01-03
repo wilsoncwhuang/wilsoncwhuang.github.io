@@ -146,6 +146,7 @@ Feature Engineering proved to be more useful than model tuning and stacking. Usi
 - **Akpevwe Ojameruaye** Colleges of Computing, Business, and Engineering
 
 **You can find code file and complete report here:** <a href="https://github.com/wilsoncwhuang/Home-Credit-Default-Risk">https://github.com/wilsoncwhuang/Home-Credit-Default-Risk</a>
+**You can find source data here:** <a href="https://www.kaggle.com/competitions/home-credit-default-risk/overview">https://www.kaggle.com/competitions/home-credit-default-risk/overview</a>
 <style>
 p{
 	text-align: justify;
