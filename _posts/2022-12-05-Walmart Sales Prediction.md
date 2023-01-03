@@ -251,7 +251,7 @@ of each Walmart location and provide insight for managers to understand the real
 ## 6. Reference
 [1] Liebeskind, M. (2021, December 14). 5 Machine Learning Techniques for Sales Forecasting. Medium.<a href="https://towardsdatascience.com/5-machine-learning-techniques-for-sales-forecasting-598e4984b109"> link</a>
 
-[2] About Walmart. (n.d.). Corporate - Walmart US. https://corporate.walmart.com/about
+[2] About Walmart. (n.d.). Corporate - Walmart US. <a href="https://corporate.walmart.com/about">link</a>
 
 ## 7. Appendix
 **Group Members:**
@@ -259,6 +259,10 @@ of each Walmart location and provide insight for managers to understand the real
 - **Jyh-Heng Yu** H.Milton Stewart School of Industrial and Systems Engineering
 - **Chin-Heng Lin** Colleges of Computing, Business, and Engineering
 - **Yu-Ching Chen** Colleges of Computing, Business, and Engineering
+
+**You can find code file and complete report here:** <a href="https://github.com/wilsoncwhuang/Walmart-Sales-Prediction">https://github.com/wilsoncwhuang/Walmart-Sales-Prediction</a>
+
+
 
 <style>
 p{
