@@ -145,6 +145,7 @@ Feature Engineering proved to be more useful than model tuning and stacking. Usi
 - **Kavya Navaneetha** Krishnan Guggenheim School of Aerospace Engineering
 - **Akpevwe Ojameruaye** Colleges of Computing, Business, and Engineering
 
+**You can find code file and complete report here:** <a href="https://github.com/wilsoncwhuang/Home-Credit-Default-Risk">https://github.com/wilsoncwhuang/Home-Credit-Default-Risk</a>
 <style>
 p{
 	text-align: justify;
