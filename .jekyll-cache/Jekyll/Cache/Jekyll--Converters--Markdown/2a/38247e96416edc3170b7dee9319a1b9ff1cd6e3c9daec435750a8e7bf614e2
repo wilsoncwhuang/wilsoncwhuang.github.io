@@ -1,0 +1,179 @@
+I"�C<h2 id="1-introduction">1. Introduction</h2>
+
+<h3 id="11-overview">1.1 Overview</h3>
+<p>Revenue forecasting has always been crucial for businesses to prepare for upcoming demands and long-term
+strategic planning. It provides insights in demand planning, storage space allocation, human resource planning, logistics
+arrangements, and more. Therefore, business owners often deploy certain data analytics models to simulate outcomes that
+can capture future trends for their operations. Models used to conduct such a simulation may vary based on its required
+precision or capability for dynamically adjusting to irregularities, but all models are aiming for similar results. Some
+common predicting models that utilize machine learning techniques for sales forecasting include linear regression, random
+forest regressions, extreme gradient boosting (XGBoost), long short-term memory (LSTM) model, ARIMA time series
+forecasting, and more [1]. In this project, we will be using multivariate linear regression techniques to forecast sales trends
+for targeted retail stores.</p>
+
+<h3 id="12-subject-for-analysis---walmart-supercenters">1.2 Subject for Analysis - Walmart Supercenters</h3>
+<p>For this project, we will be using regression models to forecast future sales of Walmart Supercenters within the
+United States. Based on their business model [2], Walmart Supercenters provides a one-stop shopping experience by
+combining grocery stores with fresh produce, bakery, deli and dairy products. They also include electronics, apparel, toys,
+and home furnishing items to customers with various needs. Furthermore, most supercenters are open 24 hours with
+additional services such as banks, hair, pharmacy, and more. The main source of customers for Walmart is from physical
+retail stores, such as Walmart Superstores, and e-commerce sales. Based on figure 1, we can see that even though the total
+number of Walmart stores has been slightly decaying, the number of supercenters is still increasing. This indicates the
+significance of Walmart Supercenters in the United States Region. Therefore, an effective model to forecast future sales
+for Walmart Supercenters would provide a critical advantage for senior level executives and managers to plan ahead.</p>
+
+<p><img src="/assets/images/Walmart Sales Prediction/1-2-1.png" alt="1-2-1" title="1-2-1" /></p>
+
+<h2 id="2-problem-statement">2. Problem Statement</h2>
+<p>In this project, our goal is to predict the weekly sales of Walmart stores based on historical data with several
+independent variables. Here we selected 10 independent variables that we assume may influence the weekly sales – date,
+temperature, fuel price, Consumer Price Index, unemployment rate, etc. We further elaborate on these independent and
+dependent variables as below. One of the biggest challenges for building an effective regression model depends on the
+quality of selected factors and understanding its correlations between each predictors. As we are curious about what
+factors may affect the sales revenue of a retail store in the US, we plan to conduct a series of regression analysis with
+residual analysis and other data validation techniques to find out the most relevant variables. By finalizing these findings,
+we can better predict the weekly sales with these selected predictors.</p>
+
+<h2 id="3-data-description">3. Data Description</h2>
+<p>We used the open-source dataset “Walmart Dataset” on Kaggle, the largest data science platform in the world.
+We got the dataset as a CSV file directly from the URL address:
+<a href="https://www.kaggle.com/datasets/yasserh/walmart-dataset">https://www.kaggle.com/datasets/yasserh/walmart-dataset</a>. Our dataset covers the historical sales records and other
+variables of 45 Walmart stores for the period from 2010/2/5 to 2012/11/1. The sample size of the Walmart Dataset is
+6,435. As we split the column Date in the Walmart Dataset into 4 different columns (Year, Month, Day, and Weekday),
+the number of independent variables will be 10 and the number of dependent variables is 1 in the dataset. In addition, we
+split the sample dataset into a training set and a test set with an 8:2 ratio (train = 5,148, test = 1,287) to ensure that our
+prediction is unbiased. Since our current model to obtain the response variable, weekly sales for a specific Walmart store
+(Weekly_Sales), is a time-dependent study with a 1-week period between each data point, we can assume the data points
+we use are time-dependent. The following table summarizes the description and categories of our 11 variables:</p>
+
+<h3 id="21-data-processing">2.1 Data Processing</h3>
+<p>Data preparation is integral to deriving clear and accurate results from a machine learning model. There are specific properties we noted when taking a deep dive into the data. It was incredibly dense, spanning across ~450 columns in total and ~307,000 rows. 
+There were inconsistencies in the data types within the columns as well meaning it was heterogeneous in nature. It was also time-varying and there were unbalances in some of the responses that required cleansing. 
+The following flow was utilized to understand the scope of the data and determine which predictive model would be best.
+<img src="/assets/images/Home Credit Default Risk/data preparation methodology.png" alt="data preparation methodology" title="data preparation methodology" /></p>
+
+<h4 id="211-data-exploration">2.1.1 Data Exploration</h4>
+
+<p>We first hypothesized which features may be most important in determining the likelihood of loan repayment. Working with a few, we derived the following:</p>
+
+<p><img src="/assets/images/Home Credit Default Risk/data exploration 1.png" alt="data exploration 1" title="data exploration 1" /></p>
+
+<p>We began by looking at a high-level scale of metrics to gauge what our overall responses might look like. 
+As you can see, the percentage of people who don’t pay back their loan was very small, so it was important to identify the correct model and execute accurate feature selection to isolate the variables most impact likelihood of repayment. 
+Here are some breakdowns of main factors we initially thought would strongly influence the model. Again, we see an even dispersion of the target across all groups of the factors observed. 
+However, we believed that car ownership may be a strong indicator that an ability to pay off a car loan might signal an ability to pay off other types of loan.</p>
+
+<p><img src="/assets/images/Home Credit Default Risk/data exploration 2.png" alt="data exploration 2" title="data exploration 2" /></p>
+
+<p>In order to aggregate the data appropriately, we used the following schema to determine the primary and foreign keys necessary for database integration. 
+This allowed us to access all the attributes associated with each customer simultaneously and manipulate the data accordingly.</p>
+
+<p><img src="/assets/images/Home Credit Default Risk/data exploration 3.png" alt="data exploration 3" title="data exploration 3" /></p>
+
+<p>The first order of business to find which attributes are positively and negatively correlated with our response. We found the following results.</p>
+
+<p><img src="/assets/images/Home Credit Default Risk/data exploration 4.png" alt="data exploration 4" title="data exploration 4" /></p>
+
+<p>As we can see, the influence of each factor seems incredibly small, but it’s crucial to note the number of factors under consideration during this analysis. 
+Therefore, relatively, this insight is useful. We’ve included part of the myriad of breakdown we’ve built, including the relationships between correlation across age groups, and the variable known as ‘EXT_SOURCE_3’. 
+Upon investigation, we discovered that a large part of the data sourcing comes from confidential financial information that has been tokenized for our use. 
+They’ve been exported into these columns accordingly. This information is insightful particularly because it helps us better predict which attributes, we may observe as a result of our feature selection.</p>
+
+<p><img src="/assets/images/Home Credit Default Risk/data exploration 5.png" alt="data exploration 5" title="data exploration 5" /></p>
+
+<p>We then wanted to explore whether there were significant correlations between the attributes themselves. 
+We looked through our table with the highest correlations to the response, and then built out heat maps based on their respective values. 
+Since we previously analyzed impact on the target value, we wanted to isolate variables’ relationships to one another. 
+This is particularly insightful to see if there was an aliasing of any kind of variable to one another. 
+If you look at the figure associated with credit card balance, we find that there are a few extraneous highly correlated variables, but their exclusion in our final model did not impact our results, therefore we moved forward with the appropriate feature selection procedures.</p>
+
+<p><img src="/assets/images/Home Credit Default Risk/data exploration 6.png" alt="data exploration 6" title="data exploration 6" /></p>
+
+<h4 id="212-data-cleansing-and-feature-selection">2.1.2 Data Cleansing and Feature Selection</h4>
+<p>We came across a significant number of columns that had missing values at a proportion that would be misrepresentative to keep in our model. 
+For the columns that had over 60% missing data, we dropped the columns entirely. For those with less than 60%, but still a significant amount of missing data, we used the median of the columns in place of the null values. 
+Here is an example of the list of columns that yielded these results.</p>
+
+<p><img src="/assets/images/Home Credit Default Risk/data cleaning and feature selection 1.png" alt="data cleaning and feature selection 1" title="data cleaning and feature selection 1" /></p>
+
+<p>In order to prepare our data for feature selection, we needed to identify the datatypes that were utilized and the breakdown of categorical vs quantitative variables. 
+Our analysis displayed the following results.</p>
+
+<p><img src="/assets/images/Home Credit Default Risk/data cleaning and feature selection 2.png" alt="data cleaning and feature selection 2" title="data cleaning and feature selection 2" /></p>
+
+<p>To make use of the insightful categorical values, we utilized One-Hot Encoding to convert the variables into binary. An example of the conversions as a result of this method are showcased below.</p>
+
+<p><img src="/assets/images/Home Credit Default Risk/data cleaning and feature selection 3.png" alt="data cleaning and feature selection 3" title="data cleaning and feature selection 3" /></p>
+
+<p>To gauge the accuracy of the conversions and ensure the distribution of values was not skewed in any way, we used minimax standardization. 
+This verifies that all the previously categorical data was on the same scale and that certain variables do not have more of an effect than others. 
+Our results behaved as expected as can be seen below.</p>
+
+<p><img src="/assets/images/Home Credit Default Risk/data cleaning and feature selection 4.png" alt="data cleaning and feature selection 4" title="data cleaning and feature selection 4" /></p>
+
+<p>Lastly, we used Random Forest to conduct our final form of feature selection. We finalized on this algorithm after much research for feature selection methods as Random Forest an embedded method meaning the combine the qualities of filter and wrapper method. 
+As a result, they are highly accurate, generalize better, and are interpretable. Due to the nature of the algorithm, they are less prone to overfitting and can more accurately determine the importance of features. 
+After running our algorithm, we were able to finalize on ~70 noteworthy columns as opposed to the previous ~400. Their respective proportion of importance is also displayed.</p>
+
+<p><img src="/assets/images/Home Credit Default Risk/data cleaning and feature selection 5.png" alt="data cleaning and feature selection 5" title="data cleaning and feature selection 5" /></p>
+
+<h3 id="22-logistic-regression">2.2 Logistic Regression</h3>
+<p>Logistic regression was used to assess the initial classification task of the data and feature set. We noticed that this algorithm takes a longer time with the large dataset present and had high memory usage. The accuracy produced was 0.919266 with a low AUC score of 0.5026. 
+The possible reasons for low AUC may be due to the assumption that there is a linear relationship between the features and the target variable. 
+If this assumption is not met, the model may not be able to accurately predict the target variable, leading to a low AUC.</p>
+
+<h3 id="23-lightgbm">2.3 LightGBM</h3>
+<p>The data exploration process shows that the home credit default risk is large and complicated. Hence, we decided to use the LightGBM model to train our data. 
+LightGBM is a gradient-boosting framework that uses tree-based learning algorithms, which can train data at a faster speed with lower memory usage and is capable of handling large-scale data.</p>
+
+<p>To have a first glance at the LightGBM model, we followed the rule from LightGBM documentation and assign the parameter arbitrarily. 
+The documentation suggests assigning larger max_bin and num_leaves parameters and a smaller training rate for gaining better accuracy. 
+We also assign the feature selection parameter to 0.8 to avoid overfitting. The following image is the first model we made and got a rather good accuracy about 0.903527. 
+Then we investigated the relationship between each parameter and the accuracy. In order to optimize the hyperparameter, we extract the range where the highest accuracy occurs.</p>
+
+<p><img src="/assets/images/Home Credit Default Risk/LightGBM 1.png" alt="LightGBM 1" title="LightGBM 1" /></p>
+
+<p>From the graph above, we can observe that the three parameters have similar patterns. We got the highest training and testing accuracy when the parameter value is small. 
+Although both accuracies will increase again as the parameter becomes larger, the gap between training and testing accuracies raise as well, which means overfitting happens. 
+Accordingly, the best range of the number of leaves, maximum depth, and the learning rate is 0 to 5, 0 to 5, and 0 to 0.1 respectively.</p>
+
+<p>After that, we selected some values in the range to find the best combination of parameters that can build the model with the highest accuracy. 
+We imported the GridSearchCV package to help us fulfill this work, and we can see the best combination is to set num_leaves=2, max_depth=1, and learning_rate=0.01. 
+We then utilized these parameters to build the LightGBM again and got a higher accuracy, 0.919266.</p>
+
+<h2 id="3-results-and-discussions">3. Results and Discussions</h2>
+<p>Since the data available to us is an Imbalanced Dataset, we cannot simply use Accuracy as a metric for evaluating the performance of the model. 
+There are some metrics that work well with imbalanced datasets, of which we will use the below-mentioned metrics. 
+The AUC Score insensitive to class imbalance. It works by ranking the probabilities of prediction of the positive class label and calculating the Area under the ROC Curve which is plotted between True Positive Rates and False Positive Rates for each threshold value. 
+This is because we need to minimize the False Negatives, i.e., the people who were predicted as non-Defaulters by the model but were Defaulters. 
+We do not want to miss out on any Defaulter as being classified as non-Defaulter because the cost of making errors could be very high. 
+LightGBM produced a higher AUC of 0.7529 against the 0.5026 of logistic regression. This shows that the boosting algorithm had better classification than binary classification, logistic regression.</p>
+
+<h2 id="4-conclusions">4. Conclusions</h2>
+<p>The constraints from the datasets noticed were mainly on the Interpretability is partially important for classifying someone as a Defaulter or not. 
+After identifying the business objectives and constraints, data imbalance insensitive machine learning algorithm was chosen. 
+Feature Engineering proved to be more useful than model tuning and stacking. Using these we formulate the following conclusions:</p>
+
+<ul>
+  <li>Some categories are discriminatory between the defaulters and non-defaulters.</li>
+  <li>Dataset is imbalanced, some correlated features weren’t affecting the performance of the model.</li>
+  <li>Defaulters usually tend to have some behavior which deviate from the normal, and thus, we cannot remove outliers or far-off points, as they may suggest some important Defaulting tendency.</li>
+  <li>LightGBM boosted the CV from feature selection, Usage of simple forward feature selection technique with Ridge regression and boosting algorithm like XGBoost, may have a further boost in CV and AUC.</li>
+</ul>
+
+<h2 id="5-appendix">5. Appendix</h2>
+<p><strong>Group Members:</strong></p>
+<ul>
+  <li><strong>Cheng-Wei Huang</strong> H.Milton Stewart School of Industrial and Systems Engineering</li>
+  <li><strong>Arnovi Moinuddin</strong> H.Milton Stewart School of Industrial and Systems Engineering</li>
+  <li><strong>Kavya Navaneetha</strong> Krishnan Guggenheim School of Aerospace Engineering</li>
+  <li><strong>Akpevwe Ojameruaye</strong> Colleges of Computing, Business, and Engineering</li>
+</ul>
+
+<style>
+p{
+	text-align: justify;
+}
+</style>
+
+:ET
