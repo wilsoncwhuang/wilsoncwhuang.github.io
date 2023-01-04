@@ -3,6 +3,9 @@ layout: post
 title: Home Credit Default Risk
 categories: Work-Demo
 tags: [Python, Machine Learning, Logistic Regression, LightGBM]
+banner:
+  image: https://repository-images.githubusercontent.com/294306593/8a769780-476c-11eb-95a0-343c54f0da9b
+  opacity: 0.618
 ---
 
 ## Abstract 
