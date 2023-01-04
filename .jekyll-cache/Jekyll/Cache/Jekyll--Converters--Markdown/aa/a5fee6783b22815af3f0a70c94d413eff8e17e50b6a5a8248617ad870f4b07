@@ -1,0 +1,29 @@
+I"’<h2 id="introduction">Introduction</h2>
+<p>This is the individual final project of a graduate level course at National Cheng Kung University that I took in my junior year.
+In this project, I implemented six different all-to-all shortest path algorithms with C++ to compare its complexity for different network structures.</p>
+
+<p>The test networks (totally 6x3x3x3=162 networks) consist of following parameters:</p>
+<div id="parameters">
+  <ul>
+    <li><strong><em>n(nodes)</em></strong>: 100, 400, 800, 1600, 3200, 6400</li>
+    <li><strong><em>m(arcs)</em></strong>: 4<em>n, 16</em>n, n*(n-1)/4</li>
+    <li><strong><em>seed</em></strong>: 1, 10, 100</li>
+    <li><strong><em>(c_min,c_max)</em></strong>: (1,1000), (1000,10000), (1,100000)</li>
+  </ul>
+</div>
+<h2 id="algorithms">Algorithms</h2>
+
+<h2 id="results">Results</h2>
+
+<style>
+#parameters{
+	margin: 5px 0px 5px;
+}
+
+p{
+	text-align: justify;
+}
+
+</style>
+
+:ET
