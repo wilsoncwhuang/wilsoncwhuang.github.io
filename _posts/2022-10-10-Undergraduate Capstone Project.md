@@ -4,6 +4,9 @@ title: SOUTHEAST MACHINERY CO., LTD. (Project Management System)
 subtitle: National Cheng Kung University Undergraduate Capstone Project
 categories: Work-Demo
 tags: [Microsoft Project, VBA, Project Managment] 
+banner:
+  image: https://scontent-lhr8-1.xx.fbcdn.net/v/t39.30808-6/307201190_494936059309962_2954101079081491634_n.jpg?stp=cp6_dst-jpg&_nc_cat=110&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=IKgcQiqbk24AX9rM4Z9&tn=WF2xJoHbogcbohzw&_nc_ht=scontent-lhr8-1.xx&oh=00_AfCorIousyCKN2HcPvM32W3oafjIcWX5aj88Yat-0RDBew&oe=63BA9146
+  opacity: 0.618
 ---
 
 
