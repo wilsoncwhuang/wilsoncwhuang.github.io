@@ -3,6 +3,9 @@ layout: post
 title: Walmart Sales Prediction
 categories: Work-Demo
 tags: [R, Regression Analysis]
+banner:
+  image: https://cdn.winsightmedia.com/platform/files/public/2022-08/background/walmart-resized_0.jpg?VersionId=FGtPT4DFvN01STGyJUe858vjotlWivMD
+  opacity: 0.618
 ---
 
 ## 1. Introduction
