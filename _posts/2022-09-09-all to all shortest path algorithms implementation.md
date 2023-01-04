@@ -27,9 +27,9 @@ The six all-to-all shortest path algorithms are:
 6. ***Dial's algorithm*** -PAPE
 	
 ## Results
-You can find the code, instructions, and output result here: <a href="https://github.com/wilsoncwhuang/All-to-all-shortest-path-algorithms-implementation">https://github.com/wilsoncwhuang/All-to-all-shortest-path-algorithms-implementation</a>
+You can find the code, instructions, and output results here: <a href="https://github.com/wilsoncwhuang/All-to-all-shortest-path-algorithms-implementation">https://github.com/wilsoncwhuang/All-to-all-shortest-path-algorithms-implementation</a>
 
-The output files show that BF and PAPE are the most efficent, while FWA and FWG are the most inefficient. Moreover, Dijkstra's algorithm perform better when data is store in binary heap.
+The output files show that BF and PAPE are the most efficent, while FWA and FWG are the most inefficient. Moreover, Dijkstra's algorithm performs better when data is stored in binary heap.
 This result corresponds to the complexity of each algorithm.
 
 
