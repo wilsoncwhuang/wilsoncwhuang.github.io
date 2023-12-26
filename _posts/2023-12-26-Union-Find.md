@@ -5,6 +5,10 @@ categories: [Data Structures and Algorithms]
 tags: 
 ---
 
+<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
 ## 1. Introduction
 The Union-Find (Disjoint Set Union, DSU) algorithm is used to efficiently keep track of a partition of a set into disjoint subsets.
 It has two main operations: <br>
