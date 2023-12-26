@@ -19,7 +19,7 @@ It has two main operations: <br>
 - Let 1 represent the parent of left group and 3 represents the parent of right group. <br>
 	_parent = [1, 1, 1, 3, 3]_ at this point.
 - Execute _find(x)_, x = 2:
-	- _parent[2]_ = 1 and 1 != x then keep traveling x = parent[x] = 1
+	- _parent[2]_ = 1 and 1 != x then keep traveling x = _parent[x]_ = 1
 	- _parent[1]_ = 1 and 1 == x then stop
 	
 ### 2.2 Union Operations
@@ -47,7 +47,7 @@ class UnionFind(object):
 Suppose we want to find the number of subsets in the following graph.
 ![3-1](/assets/images/Union Find/3-1.png "3-1")
 
-$$Adj = [\begin{bmatrix}1 & 1 & 1 & 0 & 0\end{bmatrix} \\ \begin{bmatrix}1 & 1 & 1 & 0 & 0\end{bmatrix} \\ \begin{bmatrix}1 & 1 & 1 & 0 & 0\end{bmatrix} \\ \begin{bmatrix}0 & 0 & 0 & 1 & 1\end{bmatrix} \\ \begin{bmatrix}0 & 0 & 0 & 1 & 1\end{bmatrix}]$$
+$$ Adj = [\begin{bmatrix}1 & 1 & 1 & 0 & 0\end{bmatrix} \\ \begin{bmatrix}1 & 1 & 1 & 0 & 0\end{bmatrix} \\ \begin{bmatrix}1 & 1 & 1 & 0 & 0\end{bmatrix} \\ \begin{bmatrix}0 & 0 & 0 & 1 & 1\end{bmatrix} \\ \begin{bmatrix}0 & 0 & 0 & 1 & 1\end{bmatrix}] $$
 
 **1. Initialize with _parent[i] = i_ $$parent = \begin{bmatrix}0 & 1 & 2 & 3 & 4 \end{bmatrix}$$.**
 ![3-2](/assets/images/Union Find/3-2.png "3-2")
