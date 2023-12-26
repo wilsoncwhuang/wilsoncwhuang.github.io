@@ -25,7 +25,7 @@
 # in the templates via {{ site.myvariable }}.
 
 title: Wilson C.W. Huang
-email: wilson10400235@gmail.com
+email: wsncwhuang@gmail.com
 author: Wilson C.W. Huang
 
 # Copyright setting
@@ -44,11 +44,14 @@ copyright: "Some Rights Reserved (cleft) {currentYear} {author}"
 
 description: >- # this means to ignore newlines until "baseurl:"
   Welcome to my website! I am Wilson Huang. 
-  I demo my analytics works and share some fields I am interested here. Hope you like it!
-
+  I completed my B.S. in Industrial and Information Management at National Cheng Kung University 
+  and am currently pursuing dual M.S. degrees in Operations Research and Quantitative and Computational Finance at Georgia Tech. 
+  Throughout my academic journey, I have gained valuable experience through internships in data analytics and machine learning at prestigious organizations 
+  such as IBM, Lumentum, and Academia Sinica. On this platform, I showcase some of my works and delve into the various fields that captivate my interest. 
+  I hope you enjoy exploring the content!
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://wilsoncwhuang.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
-favicon: "assets/images/favicons/meteor.png" # the favicon for your site
+favicon: "assets/images/favicons/logo.png" # the favicon for your site
 
 # Yat date format
 # refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this
