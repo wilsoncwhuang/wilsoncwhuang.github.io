@@ -12,25 +12,25 @@ tags:
 ## 1. Introduction
 The Union-Find (Disjoint Set Union, DSU) algorithm is used to efficiently keep track of a partition of a set into disjoint subsets.
 It has two main operations: <br>
-- **Union**: merge two subsets.
-- **Find**: determine which particular subset the element belongs.
+- **Union**: Merge two subsets.
+- **Find**: Determine which particular subset the element belongs.
 
 ## 2. Operations
 ### 2.1 Find Operations
-**Keep traveling towards the parent until we reach the top (no more parent)**
+**Keep traveling towards the parent until we reach the top (no more parent).**
 ![2-1](/assets/images/Union Find/2-1.png "2-1")
 
 - Let 1 represent the parent of left group and 3 represents the parent of right group. <br>
 	_parent = [1, 1, 1, 3, 3]_ at this point.
-- Execute _find(x)_, x = 2:
+- Call _find(x)_, x = 2:
 	- _parent[2]_ = 1 and 1 != x then keep traveling x = _parent[x]_ = 1
 	- _parent[1]_ = 1 and 1 == x then stop
 	
 ### 2.2 Union Operations
-**Merge y subset into x subset by assigning x's parent to y**
+**Merge y subset into x subset by assigning x's parent to y.**
 ![2-2](/assets/images/Union Find/2-2.png "2-2")
-- Execute _union(2, 3)_: 
-	- assign 3's parent as 2's parent. _parent = [1, 1, 1, 1, 3]_ at this point.
+- Call _union(2, 3)_: 
+	- Assign 3's parent as 2's parent. _parent = [1, 1, 1, 1, 3]_ at this point.
 
 ```python
 class UnionFind(object):
@@ -57,20 +57,20 @@ $$Adj = [\begin{bmatrix}1 & 1 & 1 & 0 & 0\end{bmatrix} \\ \begin{bmatrix}1 & 1 &
 ![3-2](/assets/images/Union Find/3-2.png "3-2")
 $$parent = \begin{bmatrix}0 & 1 & 2 & 3 & 4 \end{bmatrix}$$
 
-**2. Loop through each node to decide whether execute union based on connectivity.**
+**2. Loop through each node to decide whether call union based on connectivity.**
 
-- node = 0: 1 and 2 are connected, execute _union(0, 1)_ and _union(0, 2)_ 
+- node = 0: 1 and 2 are connected, so call _union(0, 1)_ and _union(0, 2)_ 
 ![3-3](/assets/images/Union Find/3-3.png "3-3")
 $$parent = \begin{bmatrix}0 & 0 & 2 & 3 & 4 \end{bmatrix}$$
 ![3-4](/assets/images/Union Find/3-4.png "3-4")
 $$parent = \begin{bmatrix}0 & 0 & 0 & 3 & 4 \end{bmatrix}$$
 
-- node = 1: 0 and 2 are connected, execute _union(1, 0)_ and _union(1, 2)_ -> graph remains the same
-- node = 2: 0 and 1 are connected, execute _union(2, 0)_ and _union(2, 1)_ -> graph remains the same
-- node = 3: 4 is connected, execute _union(3, 4)_
+- node = 1: 0 and 2 are connected, so call _union(1, 0)_ and _union(1, 2)_ -> graph remains the same
+- node = 2: 0 and 1 are connected, so call _union(2, 0)_ and _union(2, 1)_ -> graph remains the same
+- node = 3: 4 is connected, so call _union(3, 4)_
 ![3-4](/assets/images/Union Find/3-5.png "3-5")
 $$parent = \begin{bmatrix}0 & 0 & 0 & 3 & 3 \end{bmatrix}$$
-- node = 4: 3 is connected, execute _union(4, 3)_ and _union(2, 1)_ -> graph remains the same
+- node = 4: 3 is connected, call _union(4, 3)_ and _union(2, 1)_ -> graph remains the same
 
 **3. Loop through parent array via find function to see which subset the node belongs to.**
 
