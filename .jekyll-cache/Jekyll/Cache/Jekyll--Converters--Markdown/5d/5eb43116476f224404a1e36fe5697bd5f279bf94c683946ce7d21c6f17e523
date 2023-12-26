@@ -1,0 +1,8 @@
+I"u<h2 id="1-introduction">1. Introduction</h2>
+<p>The Union-Find (Disjoint Set Union, DSU) algorithm is used to efficiently keep track of a partition of a set into disjoint subsets.
+It has two main operations: <br /></p>
+<ul>
+  <li><strong>Union</strong>: merge two subsets.</li>
+  <li><strong>Find</strong>: determine which particular subset the element belongs.</li>
+</ul>
+:ET

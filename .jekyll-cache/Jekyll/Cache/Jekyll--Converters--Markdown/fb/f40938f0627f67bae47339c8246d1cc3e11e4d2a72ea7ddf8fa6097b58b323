@@ -1,0 +1,68 @@
+I"�<h2 id="1-introduction">1. Introduction</h2>
+<p>The Union-Find (Disjoint Set Union, DSU) algorithm is used to efficiently keep track of a partition of a set into disjoint subsets.
+It has two main operations: <br /></p>
+<ul>
+  <li><strong>Union</strong>: merge two subsets.</li>
+  <li><strong>Find</strong>: determine which particular subset the element belongs.</li>
+</ul>
+
+<h2 id="2-operations">2. Operations</h2>
+<h3 id="21-find-operations">2.1 Find Operations</h3>
+<p><strong>Keep traveling towards the parent until we reach the top (no more parent)</strong>
+<img src="/assets/images/Union Find/2-1.png" alt="2-1" title="2-1" /></p>
+
+<ul>
+  <li>Let 1 represent the parent of left group and 3 represents the parent of right group. <br />
+  parent = [1, 1, 1, 3, 3] at this moment.</li>
+  <li>Execute find(x), x = 2:
+    <ul>
+      <li>parent[2] = 1 and 1 != x then keep traveling x = parent[x] = 1</li>
+      <li>parent[1] = 1 and 1 == x then stop</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="22-union-operations">2.2 Union Operations</h3>
+<p><strong>Merge y subset into x subset by assigning x’s parent to y</strong>
+<img src="/assets/images/Union Find/2-2.png" alt="2-2" title="2-2" /></p>
+<ul>
+  <li>Execute union(2, 3):
+    <ul>
+      <li>assign 3’s parent as 2’s parent. parent = [1, 1, 1, 1, 3] at this moment.</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">UnionFind</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+	<span class="c1">#Initialize with parent[i] = i
+</span>	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+		<span class="bp">self</span><span class="p">.</span><span class="n">parent</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+	
+	<span class="c1">#recursively find element's parent until its parent equal to itself (no parent)
+</span>	<span class="k">def</span> <span class="nf">find</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">parent</span><span class="p">[</span><span class="n">x</span><span class="p">])</span> <span class="k">if</span> <span class="bp">self</span><span class="p">.</span><span class="n">parent</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">!=</span> <span class="n">x</span> <span class="k">else</span> <span class="n">x</span>
+	
+	<span class="c1">#merge y's subset into x's subset
+</span>	<span class="k">def</span> <span class="nf">union</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+		<span class="bp">self</span><span class="p">.</span><span class="n">parent</span><span class="p">[</span><span class="bp">self</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">y</span><span class="p">)]</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="3-union-find-algorithms-for-set-partition">3 Union Find Algorithms for set partition</h2>
+<p>Suppose we want to find each element’s subset given adjacency matrix.
+<img src="/assets/images/Union Find/3-1.png" alt="3-1" title="3-1" /></p>
+
+<p>$$Adj = \begin{bmatrix}1 &amp; 1 &amp; 1 &amp; 0 &amp; 0\\ 1 &amp; 1 &amp; 1 &amp; 0 &amp; 0\\1 &amp; 1 &amp; 1 &amp; 0 &amp; 0\\0 &amp; 0 &amp; 0 &amp; 1 &amp; 1\\0 &amp; 0 &amp; 0 &amp; 1 &amp; 1\end{bmatrix}$$</p>
+
+<ol>
+  <li>
+    <p>Initialize with parent[i] = i $$parent = \begin{bmatrix}0 &amp; 1 &amp; 2 &amp; 3 &amp; 4 \end{bmatrix}$$
+<img src="/assets/images/Union Find/3-2.png" alt="3-2" title="3-2" /></p>
+  </li>
+  <li>
+    <p>Loop through each node to decide whether execute union based on connectivity
+<img src="/assets/images/Union Find/3-3.png" alt="3-3" title="3-3" />
+<img src="/assets/images/Union Find/3-4.png" alt="3-4" title="3-4" /></p>
+  </li>
+</ol>
+
+:ET

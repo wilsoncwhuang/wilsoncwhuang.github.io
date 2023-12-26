@@ -1,0 +1,15 @@
+I"–<h2 id="1-introduction">1. Introduction</h2>
+<p>The Union-Find (Disjoint Set Union, DSU) algorithm is used to efficiently keep track of a partition of a set into disjoint subsets.
+It has two main operations: <br /></p>
+<ul>
+  <li><strong>Union</strong>: merge two subsets</li>
+  <li><strong>Find</strong>: determine which particular subset the element belongs</li>
+</ul>
+
+<h2 id="2-operations">2. Operations</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1. Initialize with Parent[i] = i
+</code></pre></div></div>
+<h2 id="3-code">3. Code</h2>
+<pre><code class="language-Python">def find(
+</code></pre>
+:ET
