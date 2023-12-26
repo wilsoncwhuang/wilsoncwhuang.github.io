@@ -53,14 +53,15 @@ Suppose we want to find the number of subsets in the following graph.
 
 $$Adj = [\begin{bmatrix}1 & 1 & 1 & 0 & 0\end{bmatrix} \\ \begin{bmatrix}1 & 1 & 1 & 0 & 0\end{bmatrix} \\ \begin{bmatrix}1 & 1 & 1 & 0 & 0\end{bmatrix} \\ \begin{bmatrix}0 & 0 & 0 & 1 & 1\end{bmatrix} \\ \begin{bmatrix}0 & 0 & 0 & 1 & 1\end{bmatrix}] $$
 
-**1. Initialize with _parent[i] = i_ $$parent = \begin{bmatrix}0 & 1 & 2 & 3 & 4 \end{bmatrix}$$.**
+**1. Initialize with _parent[i] = i_.**
 ![3-2](/assets/images/Union Find/3-2.png "3-2")
+$$parent = \begin{bmatrix}0 & 1 & 2 & 3 & 4 \end{bmatrix}$$
 
 **2. Loop through each node to decide whether execute union based on connectivity.**
 
 - node = 0: 1 and 2 are connected, execute _union(0, 1)_ and _union(0, 2)_ 
 ![3-3](/assets/images/Union Find/3-3.png "3-3")
-$$parent = [0, 0, 2, 3, 4]$$
+$$parent = \begin{bmatrix}0 & 0 & 2 & 3 & 4 \end{bmatrix}$$
 ![3-4](/assets/images/Union Find/3-4.png "3-4")
 $$parent = \begin{bmatrix}0 & 0 & 0 & 3 & 4 \end{bmatrix}$$
 
