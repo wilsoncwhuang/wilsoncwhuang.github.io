@@ -16,7 +16,7 @@ It has two main operations: <br>
 - **Find**: Determine which particular subset the element belongs.
 
 ## 2. Operations
-### 2.1 Find Operations
+### 2.1 Find Operation
 **Keep traveling towards the parent until we reach the top (no more parent).**
 ![2-1](/assets/images/Union Find/2-1.png "2-1")
 
@@ -26,7 +26,7 @@ It has two main operations: <br>
 	- _parent[2]_ = 1 and 1 != x then keep traveling x = _parent[x]_ = 1
 	- _parent[1]_ = 1 and 1 == x then stop
 	
-### 2.2 Union Operations
+### 2.2 Union Operation
 **Merge y subset into x subset by assigning x's parent to y.**
 ![2-2](/assets/images/Union Find/2-2.png "2-2")
 - Call _union(2, 3)_: 
@@ -76,7 +76,7 @@ $$parent = \begin{bmatrix}0 & 0 & 0 & 3 & 3 \end{bmatrix}$$
 
 
 ```python
-def FindSebsetNum(object):
+def FindSubsetNum(object):
 	n = len(Adj)
 	uf = UnionFind(n)
 	for node_1, row_arr in enumerate(Adj):
